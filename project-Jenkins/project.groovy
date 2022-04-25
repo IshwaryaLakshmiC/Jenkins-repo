@@ -1,10 +1,10 @@
 def inject_env (String build_branch){
     env.deploy_test_var1='Var 1 - Hello'
     env.deploy_test_var2='Var 2 - World'
-    env.environ_file='.Build-Dir/Test-2/.build/env'
+    env.environ_file='.Build-Dir/.build/env'
 
     switch(build_branch) {
-        case 'develop':
+        case 'main':
             env.deploy_test_var2='Var 2 - World - Develop branch'
             stage('Stage: Testing Stage execution in switch Statement'){
                 echo "Hello I m executing within a stage statement inside a switch case! Yaay!!!!"
@@ -19,7 +19,7 @@ def inject_stage (String build_branch){
     echo "${build_branch}"
     echo "${env.build_branch}"
     switch(build_branch){
-        case 'develop':
+        case 'main':
             echo "We are in the switch condition of inject_stage method!"
             echo "brr"
             echo '${brr}'
