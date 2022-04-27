@@ -35,7 +35,7 @@ def configuratioin(String build_branch) {
     sed -i "s/<% DEPLOY_AIRFLOW_DB_PORT %>/${deploy_airflow_db_port}/g" ${environ_file}
     sed -i "s/<% DEPLOY_AIRFLOW_DB_NAME %>/${deploy_airflow_db_name}/g" ${environ_file}
     sed -i "s/<% DEPLOY_AIRFLOW_DB_USER %>/${deploy_airflow_db_user}/g" ${environ_file}
-    cat '.Build-Dir/.build/env'
+    cat '.Build-Dir/project-Jenkins/.build/env'
     """
 }
 
