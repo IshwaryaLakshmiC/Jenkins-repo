@@ -6,7 +6,7 @@ def inject_env (String build_branch){
     switch(build_branch) {
         case 'main':
             env.deploy_test_var2='Var 2 - World - Develop branch'
-            env.deploy_airfolw_db_host='blah blah'
+            env.deploy_airfolw_db_host='s-ccls-dashboard-dashboard-rds.cuqu1kbrsam6.us-west-2.rds.amazonaws.com'
             env.deploy_airflow_db_port='srishti blah blah'
             env.deploy_airflow_db_name='another blah blah'
             env.deploy_airflow_db_user='jenkins blah blah'
