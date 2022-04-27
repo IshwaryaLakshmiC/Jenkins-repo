@@ -28,8 +28,8 @@ def inject_stage (String build_branch){
     }
 }
 
-def configuratioin(String build_branch) {
-    inject_env(build_branch)
+def configuratioin(String parallel_stage) {
+    // inject_env(parallel_stage)
     //     sed -i "s/<% DEPLOY_AIRFLOW_DB_HOST %>/${deploy_airfolw_db_host}/g" ${environ_file}
     sh """
     echo 'Setting env values'
@@ -41,8 +41,8 @@ def configuratioin(String build_branch) {
 }
 
 // def mainfunc(String build_branch, String build_number, String build_job, String build_url) {
-def mainfunc(String build_branch){
-    switch('main'){
+def mainfunc(String parallel_stage){
+    switch('Frontend'){
         case 'Frontend':
             echo "We are in the frontend section"
             echo "HELLO FRONTEND"
