@@ -28,8 +28,8 @@ def inject_stage (String build_branch){
     }
 }
 
-def configuratioin(String parallel_stage) {
-    // inject_env(parallel_stage)
+def configuratioin(String build_branch) {
+    inject_env(build_branch)
     //     sed -i "s/<% DEPLOY_AIRFLOW_DB_HOST %>/${deploy_airfolw_db_host}/g" ${environ_file}
     sh """
     echo 'Setting env values'
