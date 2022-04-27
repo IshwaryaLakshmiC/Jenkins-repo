@@ -1,12 +1,7 @@
 def inject_env (String build_branch){
     env.deploy_test_var1='Var 1 - Hello'
     env.deploy_test_var2='Var 2 - World'
-    env.environ_file='.Build-Dir/.build/env'
-    env.deploy_test_var2='Var 2 - World - Develop branch'
-    env.deploy_airfolw_db_host='s-ccls-dashboard-dashboard-rds.cuqu1kbrsam6.us-west-2.rds.amazonaws.com'
-    env.deploy_airflow_db_port='blah blah'
-    env.deploy_airflow_db_name='another blah blah'
-    env.deploy_airflow_db_user='jenkins blah blah'    
+    env.environ_file='.Build-Dir/project-Jenkins/.build/env'    
     switch(build_branch) {
         case 'main':
             env.deploy_test_var2='Var 2 - World - Develop branch'
