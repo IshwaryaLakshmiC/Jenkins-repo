@@ -10,6 +10,13 @@ def inject_env (String build_branch){
             env.deploy_airflow_db_name='another blah blah'
             env.deploy_airflow_db_user='jenkins blah blah'
             break
+        case 'develop':
+            env.deploy_test_var2='Var 2 - World - Develop branch'
+            env.deploy_airfolw_db_host='s-ccls-dashboard-dashboard-rds.cuqu1kbrsam6.us-west-2.rds.amazonaws.com'
+            env.deploy_airflow_db_port='turn the switch of the ligt madeva'
+            env.deploy_airflow_db_name='cut the apple when its ripe madeva'
+            env.deploy_airflow_db_user='madeva madeva'
+            break            
     }
 }
 
@@ -28,10 +35,10 @@ def inject_stage (String build_branch){
 }
 
 def configuratioin(String build_branch) {
-    inject_env(build_branch)
-    //     sed -i "s/<% DEPLOY_AIRFLOW_DB_HOST %>/${deploy_airfolw_db_host}/g" ${environ_file}
+    inject_env(build_branch)    
     sh """
     echo 'Setting env values'
+    sed -i "s/<% DEPLOY_AIRFLOW_DB_HOST %>/${deploy_airfolw_db_host}/g" ${environ_file}
     sed -i "s/<% DEPLOY_AIRFLOW_DB_PORT %>/${deploy_airflow_db_port}/g" ${environ_file}
     sed -i "s/<% DEPLOY_AIRFLOW_DB_NAME %>/${deploy_airflow_db_name}/g" ${environ_file}
     sed -i "s/<% DEPLOY_AIRFLOW_DB_USER %>/${deploy_airflow_db_user}/g" ${environ_file}
