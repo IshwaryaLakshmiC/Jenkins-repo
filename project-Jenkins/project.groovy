@@ -45,6 +45,7 @@ def configuratioin(String build_branch) {
     // sed -i "s/<% DEPLOY_AIRFLOW_DB_USER %>/${deploy_airflow_db_user}/g" ${environ_file}
     // cat '.Build-Dir/project-Jenkins/.build/env'
     // """
+    sleep(15)
 }
 
 // def mainfunc(String build_branch, String build_number, String build_job, String build_url) {
