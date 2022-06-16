@@ -54,6 +54,9 @@ def mainfunc(String parallel_stage){
     switch(parallel_stage){
         case 'Frontend':
             echo "We are in the frontend section"
+            for(int i in 1..5){
+                print(i)
+            }
             echo "HELLO FRONTEND"
             sleep(5)
             echo "HELLO Still in FRONTEND"
