@@ -50,6 +50,7 @@ def configuratioin(String build_branch) {
 
 // def mainfunc(String build_branch, String build_number, String build_job, String build_url) {
 def mainfunc(String parallel_stage){
+    echo "Tandani tane tane tandano tane nane no"
     switch(parallel_stage){
         case 'Frontend':
             echo "We are in the frontend section"
